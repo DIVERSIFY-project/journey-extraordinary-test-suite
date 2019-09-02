@@ -1,5 +1,5 @@
 This is a checker method that can verify complex propeties about matrices. 
-In the bootom part of the checker, one can observe an extraordinary double imbricated ```for``` loop that checks that the ```min``` variable correctly converges from ```Double.POSITIVE_INFINITY``` to ```0```. 
+In the bootom part of the checker, one can observe an extraordinary double imbricated ```for``` loop that checks that the ```min``` variable correctly converges from ```Double.POSITIVE_INFINITY``` to ```0```. ([source](https://github.com/wardev/commons-math-optimizers/blob/c88ba4f6a2ce627ed3c4a1b8aefb19550be72357/src/test/java/org/apache/commons/math/geometry/euclidean/twod/PolygonsSetTest.java#L867))
 
 ```java
     // org.apache.commons.math3.geometry.euclidean.twod.PolygonsSetTest
