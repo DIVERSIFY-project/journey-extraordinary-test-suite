@@ -9,14 +9,23 @@ So:
 ```java
 @RunWith(value = Parameterized.class)
 public class ByteBufferTest {
-
-  public ByteBufferTest(byte[] data) {
-    this.data = data;
+  @Test
+  public void testReadSignedVarIntWhenLenIs5() throws Exception {
+    int len = 5;
+    ByteBuffer byteBuffer = new ByteBuffer(data);
+    long expected = data[0] |       ByteBuffer.calculateUnsignedInt(data[1], data[2], data[3], data[4]);
+    long actual = byteBuffer.readSignedVarInt(len);
+    assertEquals(expected, actual);
   }
 
   private static byte[] getRandomByteArray() {
     return new byte[] {(byte)random.nextInt(), (byte)random.nextInt(), (byte)random.nextInt(), (byte)random.nextInt(), (byte)random.nextInt(), (byte)random.nextInt(),
 (byte)random.nextInt()};
+  }
+
+
+  public ByteBufferTest(byte[] data) {
+    this.data = data;
   }
 
 
@@ -31,13 +40,7 @@ public class ByteBufferTest {
 }
 
 
-  @Test
-  public void testReadSignedVarIntWhenLenIs5() throws Exception {
-    int len = 5;
-    ByteBuffer byteBuffer = new ByteBuffer(data);
-    long expected = data[0] |       ByteBuffer.calculateUnsignedInt(data[1], data[2], data[3], data[4]);
-    long actual = byteBuffer.readSignedVarInt(len);
-    assertEquals(expected, actual);
 }
+ 
 ```
 

@@ -20,4 +20,5 @@ public void testTransitionMeasurementMatrixMismatch() {
   MeasurementModel mm = new DefaultMeasurementModel(H, R);
   new KalmanFilter(pm, mm);
   Assert.fail("transition and measurement matrix should not be compatible");
-}```
+}
+```
