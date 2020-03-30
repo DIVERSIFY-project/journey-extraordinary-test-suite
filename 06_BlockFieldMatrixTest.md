@@ -1,4 +1,4 @@
-An deterministic test case with hard-coded seed.
+A deterministic test case with hard-coded seeded random number generator.
 
 ```java
 org.apache.commons.math3.linear.BlockFieldMatrixTest
